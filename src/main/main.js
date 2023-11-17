@@ -36,8 +36,12 @@ function Main() {
       console.log(response.data.token);
       localStorage.setItem("token", response.data.token);
       navigate(`/member/${response.data.token}`);
+    })
+    .catch(function (error) {
+      // 에러가 발생한 경우 처리
+      alert(error.response.data.token);
     });
-  }
+  };
   return (
     <div>
       <div className="main">

@@ -40,13 +40,17 @@ function Recommend() {
     if (localStorage.getItem("token") == null) {
       alert("로그인 후 이용해주세요");
     }
+    else if(onSearch===false){
+      alert("검색하고 구매해주세요")
+    }
     else {
+      const orderNumber = `mid_${new Date().getTime()}`;
       const { IMP } = window;
       IMP.init('imp16078686');
       IMP.request_pay({
         pg: 'html5_inicis',                           // PG사
         pay_method: 'card',                           // 결제수단
-        merchant_uid: `mid_${new Date().getTime()}`,   // 주문번호
+        merchant_uid: orderNumber,   // 주문번호
         amount: price,                                 // 결제금액
         name: render_name,                  //책이름!!!!!!!!
         buyer_name: '지승현',                           // 구매자 이름
@@ -56,7 +60,6 @@ function Recommend() {
         buyer_postcode: '06018',
       }, function (res) {
         console.log("res값:", res);
-
         // 결제검증
         axios({
           type: "POST",
@@ -67,7 +70,7 @@ function Recommend() {
           if (res.paid_amount === response.data.response.amount) {
             alert("결제 및 결제검증완료");
             console.log("response값:", response);
-            purchase();
+            purchase(orderNumber);
           } else {
             alert("결제 실패");
           }
@@ -124,6 +127,9 @@ function Recommend() {
     if (localStorage.getItem("token") === null) {
       alert("로그인 후 사용해주세요");
     }
+    else if(onSearch === false){
+      alert("검색하고 담아주세요");
+    }
     else {
       //카트 api
       const url = `http://localhost:8080/order/cart`
@@ -144,7 +150,8 @@ function Recommend() {
       });
     }
   }
-  const purchase = () => {
+  const purchase = (orderNumber) => {
+    console.log("주문번호",orderNumber);
     if (localStorage.getItem("token") === null) {
       alert("로그인 후 사용해주세요");
     }
@@ -159,6 +166,7 @@ function Recommend() {
             "book_id": parseInt(localStorage.getItem("boardId")),
             "member_id": parseInt(localStorage.getItem("memberid")),
             "stock": 1,
+            "merchant_id":orderNumber,
             "where": 0
           }
         }

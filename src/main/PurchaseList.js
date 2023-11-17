@@ -9,6 +9,8 @@ function PurchaseList(props) {
         <div>
           <div className="cart_text">{props.title}</div>
           <div className="cart_text">수량:{props.stock}개</div>
+          <div onClick = {props.onClick}className="refund">환불</div>
+
         </div>
       </div>
     </div>

@@ -33,7 +33,7 @@ function BoardList({reviewing,setReview}) {
         setData(response.data.boardlist);
         const num = parseInt(response.data.size, 10);
         setPage(num);
-        setLastPage(Math.ceil(num / 10));
+        setLastPage(Math.ceil(num / 5));
 
       } catch (error) {
         console.error('Error fetching data:', error);

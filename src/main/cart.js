@@ -13,12 +13,13 @@ function Cart({ data, ...props }) {
       alert("로그인 후 이용해주세요");
     }
     else {
+      const orderNumber = `mid_${new Date().getTime()}`;
       const { IMP } = window;
       IMP.init('imp16078686');
       IMP.request_pay({
         pg: 'html5_inicis',                           // PG사
         pay_method: 'card',                           // 결제수단
-        merchant_uid: `mid_${new Date().getTime()}`,   // 주문번호
+        merchant_uid: orderNumber,   // 주문번호
         amount: data.prices[index],                                 // 결제금액
         name: data.titles[index],                  //책이름!!!!!!!!
         buyer_name: '지승현',                           // 구매자 이름
@@ -39,7 +40,7 @@ function Cart({ data, ...props }) {
           if (res.paid_amount === response.data.response.amount) {
             alert("결제 및 결제검증완료");
             console.log("response값:", response);
-            purchase();
+            purchase(orderNumber);
           } else {
             alert("결제 실패");
           }
@@ -47,7 +48,7 @@ function Cart({ data, ...props }) {
       });
     }
   }
-  const purchase = () => {
+  const purchase = (orderNumber) => {
     if (localStorage.getItem("token") === null) {
       alert("로그인 후 사용해주세요");
     }
@@ -62,6 +63,7 @@ function Cart({ data, ...props }) {
             "book_id": data.books[index],
             "member_id": parseInt(localStorage.getItem("memberid")),
             "stock": 1,
+            "merchant_id":orderNumber,
             "where": 1
           }
         }
