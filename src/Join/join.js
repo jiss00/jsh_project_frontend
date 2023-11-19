@@ -34,7 +34,7 @@ function Join() {
   }
 
   const signup = () => {
-    const url = `http://localhost:8080/member/join`
+    const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/member/join`
     axios(
       {
         url: url,
@@ -52,7 +52,7 @@ function Join() {
     });
   }
   const submit =() => {
-    const url = `http://localhost:8080/mail`
+    const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/mail`
     axios(
       {
         url: url,
@@ -69,7 +69,7 @@ function Join() {
   }
 
   const confirm = () =>{
-    const url = `http://localhost:8080/mail/confirm`
+    const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/mail/confirm`
     axios(
       {
         url: url,

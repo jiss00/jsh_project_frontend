@@ -12,7 +12,7 @@ function CartList({id,setIndex,index,...props}) {
 
   const cancel =() =>{
       //구매 api
-      const url = `http://localhost:8080/order/cancel`
+      const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/order/cancel`
       axios(
         {
           url: url,

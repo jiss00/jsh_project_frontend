@@ -20,7 +20,7 @@ function Main() {
     setName(e.target.value);
   }
   const login = () => {
-    const url = `http://localhost:8080/member/login`
+    const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/member/login`
     axios(
       {
         url: url,
@@ -39,7 +39,7 @@ function Main() {
     })
     .catch(function (error) {
       // 에러가 발생한 경우 처리
-      alert(error.response.data.token);
+      alert("로그인 실패");
     });
   };
   return (

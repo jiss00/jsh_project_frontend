@@ -33,7 +33,7 @@ function Cart({ data, ...props }) {
         // 결제검증
         axios({
           type: "POST",
-          url: "http://localhost:8080/verify/" + res.imp_uid
+          url: "http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/verify/" + res.imp_uid
         }).then(function (response) {
           console.log("response값:", response);
 
@@ -54,7 +54,7 @@ function Cart({ data, ...props }) {
     }
     else {
       //구매 api
-      const url = `http://localhost:8080/order/purchase`
+      const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/order/purchase`
       axios(
         {
           url: url,

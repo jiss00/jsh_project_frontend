@@ -23,7 +23,7 @@ function Home_1() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = 'http://localhost:8080/order/cart';
+        const url = 'http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/order/cart';
         const response = await axios.get(url, {
           params: {
             id: localStorage.getItem("memberid"),
@@ -40,7 +40,7 @@ function Home_1() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = 'http://localhost:8080/order/purchase';
+        const url = 'http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/order/purchase';
         const response = await axios.get(url, {
           params: {
             id: localStorage.getItem("memberid"),
