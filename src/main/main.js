@@ -20,7 +20,7 @@ function Main() {
     setName(e.target.value);
   }
   const login = () => {
-    const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/member/login`
+    const url = `https://jshtoy.shop/member/login`
     axios(
       {
         url: url,
