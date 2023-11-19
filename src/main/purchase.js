@@ -9,7 +9,7 @@ function Purchase({ data, ...props }) {
   const cartItems = [];
   const pay_cancel=(merchant_uid,purchase_id,purchase)=>{
     axios({
-      url: `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/payments/cancel`, // 예: http://www.myservice.com/payments/cancel
+      url: `https://jshtoy.shop/payments/cancel`, // 예: http://www.myservice.com/payments/cancel
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -28,7 +28,7 @@ function Purchase({ data, ...props }) {
   }
   const refund = (title,merchant_uid,purchase_id) =>{
     axios({
-      url: `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/order/findBook`, // 예: http://www.myservice.com/payments/cancel
+      url: `https://jshtoy.shop/order/findBook`, // 예: http://www.myservice.com/payments/cancel
       method: "POST",
       headers: {
         "Content-Type": "application/json"

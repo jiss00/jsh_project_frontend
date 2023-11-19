@@ -63,7 +63,7 @@ function Recommend() {
         // 결제검증
         axios({
           type: "POST",
-          url: "http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/verify/" + res.imp_uid
+          url: "https://jshtoy.shop/verify/" + res.imp_uid
         }).then(function (response) {
           console.log("response값:", response);
 
@@ -83,7 +83,7 @@ function Recommend() {
     setScore(event.target.value);
   }
   const search = () => {
-    const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/member/recommend`
+    const url = `https://jshtoy.shop/member/recommend`
     axios(
       {
         url: url,
@@ -132,7 +132,7 @@ function Recommend() {
     }
     else {
       //카트 api
-      const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/order/cart`
+      const url = `https://jshtoy.shop/order/cart`
       axios(
         {
           url: url,
@@ -157,7 +157,7 @@ function Recommend() {
     }
     else {
       //구매 api
-      const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/order/purchase`
+      const url = `https://jshtoy.shop/order/purchase`
       axios(
         {
           url: url,

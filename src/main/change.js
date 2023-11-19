@@ -36,7 +36,7 @@ function Change() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/board/list`;
+        const url = `https://jshtoy.shop/board/list`;
         const response = await axios.get(url, {
           params: {
             id: localStorage.getItem("id"),

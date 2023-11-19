@@ -22,7 +22,7 @@ function BoardList({reviewing,setReview}) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = 'http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/board/review';
+        const url = 'https://jshtoy.shop/board/review';
         const response = await axios.get(url, {
           params: {
             name: localStorage.getItem("name"),

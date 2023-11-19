@@ -14,7 +14,7 @@ function Write() {
   const [name, setName] = useState('');
   const date = getCurrentDateTime();
   const save = () => {
-    const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/board/write`
+    const url = `https://jshtoy.shop/board/write`
     axios(
       {
         url: url,

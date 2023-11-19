@@ -30,7 +30,7 @@ function Board() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = 'http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/board/write';
+        const url = 'https://jshtoy.shop/board/write';
         const response = await axios.get(url, {
           params: {
             id: localStorage.getItem("boardId"),
@@ -58,7 +58,7 @@ function Board() {
     navigate(`/member/${localStorage.getItem("token")}`);
   }
   const search = () => {
-    const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/board/search`
+    const url = `https://jshtoy.shop/board/search`
     axios(
       {
         url: url,

@@ -34,7 +34,7 @@ function Join() {
   }
 
   const signup = () => {
-    const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/member/join`
+    const url = `https://jshtoy.shop/member/join`
     axios(
       {
         url: url,
@@ -52,7 +52,7 @@ function Join() {
     });
   }
   const submit =() => {
-    const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/mail`
+    const url = `https://jshtoy.shop/mail`
     axios(
       {
         url: url,
@@ -69,7 +69,7 @@ function Join() {
   }
 
   const confirm = () =>{
-    const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/mail/confirm`
+    const url = `https://jshtoy.shop/mail/confirm`
     axios(
       {
         url: url,
