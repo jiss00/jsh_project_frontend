@@ -25,7 +25,7 @@ function BoardView1({setView,reviewing,setReview}) {
   };
 
   const remove = () => {
-    const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/board/delete`;
+    const url = `https://jshtoy.shop/board/delete`;
     setIsModalOpen(false);
 
     axios(

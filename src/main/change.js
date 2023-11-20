@@ -14,7 +14,7 @@ function Change() {
   const date = getCurrentDateTime();
   const [modal, setModal] = useState(false);
   const save = () => {
-    const url = `http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/board/update`
+    const url = `https://jshtoy.shop/board/update`
     axios(
       {
         url: url,
