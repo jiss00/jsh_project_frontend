@@ -10,6 +10,8 @@ function Join() {
   const [name, setName] = useState('');
   const [pwd, setPwd] = useState('');
   const [auth, setAuth] = useState("");
+  const [isConfirmSuccess, setIsConfirmSuccess] = useState(false);
+
 
   const [phone, setPhone_num] = useState('');  
   const nameset = (e) => {
@@ -53,6 +55,8 @@ function Join() {
   }
   const submit =() => {
     const url = `https://jshtoy.shop/mail`
+    //const url = `http://localhost:8080/mail`
+    
     axios(
       {
         url: url,
@@ -70,6 +74,7 @@ function Join() {
 
   const confirm = () =>{
     const url = `https://jshtoy.shop/mail/confirm`
+    //const url =`http://localhost:8080/mail/confirm`
     axios(
       {
         url: url,
@@ -88,6 +93,8 @@ function Join() {
       }
       else{
         alert("인증 완료");
+        setIsConfirmSuccess(true); // 인증이 성공하면 상태 업데이트
+
       }
       
     }); 
@@ -125,8 +132,9 @@ function Join() {
         <div></div>
         <input onChange={phoneset} className="join_input"></input>
       </div>
-      <div onClick={signup} className="join_button">회원가입</div>
-    </div>
+      {isConfirmSuccess && (
+          <div onClick={signup} className="join_button">회원가입</div>
+      )}    </div>
   )
 }
 

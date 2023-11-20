@@ -12,11 +12,11 @@
 .join{
   width: 700px;
   height : 720px;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(250, 250, 250);
   position: absolute;
   top : 600px;
   left: 50%;
-  transform: translate(-30%, -50%);
+  transform: translate(-55%, -50%);
   margin:0 auto;
   border-radius: 20px;
 }
