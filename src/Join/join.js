@@ -43,7 +43,7 @@ function Join() {
         method: 'post',
         data: {
           "email": id,
-          "employNmae": name,
+          "employName": name,
           "password": pwd,
           "phoneNumber": phone
         }
