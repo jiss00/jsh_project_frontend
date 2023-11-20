@@ -40,7 +40,7 @@ function Home_1() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = 'http://ec2-3-34-188-54.ap-northeast-2.compute.amazonaws.com/order/purchase';
+        const url = 'https://jshtoy.shop/order/purchase';
         const response = await axios.get(url, {
           params: {
             id: localStorage.getItem("memberid"),
