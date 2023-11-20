@@ -35,6 +35,7 @@ function Main() {
       localStorage.setItem("memberid", response.data.memberId);
       console.log(response.data.token);
       localStorage.setItem("token", response.data.token);
+      localStorage.setItem("name",name);
       navigate(`/member/${response.data.token}`);
     })
     .catch(function (error) {
