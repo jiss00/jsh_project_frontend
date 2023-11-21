@@ -117,8 +117,14 @@ function Recommend() {
   }
 
   const goBoard = () => {
-    localStorage.setItem("boardId", boardId);
-    navigate(`/board/${boardId}`);
+    if(localStorage.getItem("token") === null){
+      alert("로그인 후 가능");
+    }
+    else{
+      localStorage.setItem("boardId", boardId);
+      navigate(`/board/${boardId}`);
+    }
+    
   }
   const goList = () => {
     navigate(`/board/${Jwttoken}/list`)
