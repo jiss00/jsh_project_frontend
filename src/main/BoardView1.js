@@ -37,7 +37,8 @@ function BoardView1({setView,reviewing,setReview}) {
         }
       }
     ).then(function (response) {
-      navigate(-1);
+      window.location.reload();
+
     });
   }
 
@@ -87,7 +88,7 @@ function BoardView1({setView,reviewing,setReview}) {
         </div>
         {isModalOpen && (
           <div className="modal">
-            <div className="modal_title">알림</div>
+            <div className="modal_title">삭제</div>
             <div className="modal-content">
               <p>예 또는 아니오를 선택하세요.</p>
               <button onClick={closeModal}>아니오</button>
