@@ -18,7 +18,6 @@ function BoardView({setReview,...props}){
           params: { id: localStorage.getItem("id"),          
         },
         });
-        console.log(response.data);
         setTitle(response.data.title);
         setName(response.data.name);
         setContent(response.data.content);

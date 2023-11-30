@@ -29,7 +29,6 @@ function Change() {
         }
       }
     ).then(function (response) {
-      console.log(response);
       navigate(-1);
     });
   }
@@ -42,7 +41,6 @@ function Change() {
             id: localStorage.getItem("id"),
           },
         });
-        console.log(response.data);
         setTitle(response.data.title);
         setContent(response.data.content);
       } catch (error) {

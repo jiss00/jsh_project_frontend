@@ -16,8 +16,7 @@ function BoardList({reviewing,setReview}) {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [lastPage, setLastPage] = useState(1)
-  console.log("page", page);
-  console.log("z", lastPage);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,7 +28,6 @@ function BoardList({reviewing,setReview}) {
             page: currentPage
           },
         });
-        console.log(response.data);
         setData(response.data.boardlist);
         const num = parseInt(response.data.size, 10);
         setPage(num);

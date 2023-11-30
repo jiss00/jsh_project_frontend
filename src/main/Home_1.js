@@ -21,6 +21,9 @@ function Home_1() {
   const [purchaseData, setPurchaseData] = useState([]);
 
   useEffect(() => {
+    if(localStorage.getItem("token")===null){
+      navigate("/");
+    }
     const fetchData = async () => {
       try {
         const url = 'https://jshtoy.shop/order/cart';

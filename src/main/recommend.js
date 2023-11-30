@@ -59,17 +59,14 @@ function Recommend() {
         buyer_addr: '부산',                    // 구매자 주소
         buyer_postcode: '06018',
       }, function (res) {
-        console.log("res값:", res);
         // 결제검증
         axios({
           type: "POST",
           url: "https://jshtoy.shop/verify/" + res.imp_uid
         }).then(function (response) {
-          console.log("response값:", response);
 
           if (res.paid_amount === response.data.response.amount) {
             alert("결제 및 결제검증완료");
-            console.log("response값:", response);
             purchase(orderNumber);
           } else {
             alert("결제 실패");
@@ -93,7 +90,6 @@ function Recommend() {
         }
       }
     ).then(function (response) {
-      console.log("data",response.data);
       localStorage.setItem("board", response.data[0].book_id);
       setBookid(response.data.map(item => item.id));
       setBookimg(response.data.map(item => item.img));
@@ -103,7 +99,6 @@ function Recommend() {
 
     });
   }
-  console.log(boardId);
   const left = () => {
     if (cnt === 0) {
       setCnt(2);
@@ -150,14 +145,12 @@ function Recommend() {
           }
         }
       ).then(function (response) {
-        console.log(response);
         alert("장바구니에 담았습니다");
 
       });
     }
   }
   const purchase = (orderNumber) => {
-    console.log("주문번호",orderNumber);
     if (localStorage.getItem("token") === null) {
       alert("로그인 후 사용해주세요");
     }
@@ -177,7 +170,6 @@ function Recommend() {
           }
         }
       ).then(function (response) {
-        console.log(response);
         alert("구매 했습니다.");
         window.location.reload();
       });

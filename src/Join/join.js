@@ -29,7 +29,6 @@ function Join() {
   }
   const authset = (e) => {
     setAuth(e.target.value);
-    console.log(auth);
   }
   const back = () => {
     navigate('/');
@@ -49,7 +48,6 @@ function Join() {
         }
       }
     ).then(function (response) {
-      console.log(response);
       navigate('/');
     });
   }
@@ -67,7 +65,6 @@ function Join() {
       }
     ).then(function (response) {
       alert("해당 메일로 인증번호가 발송되었습니다.");
-      console.log(response);
       navigate('/');
     }); 
   }
@@ -84,7 +81,6 @@ function Join() {
         }
       }
     ).then(function (response) {
-      console.log(response);
       if(response.data ==="실패"){
         alert("인증번호가 다릅니다. 다시 시도해주세요");
       }

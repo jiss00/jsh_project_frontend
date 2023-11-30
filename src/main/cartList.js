@@ -24,7 +24,6 @@ function CartList({id,setIndex,index,...props}) {
           }
         }
       ).then(function (response) {
-        console.log(response);
         alert("장바구니에서 취소 처리했습니다");
         window.location.reload();
 

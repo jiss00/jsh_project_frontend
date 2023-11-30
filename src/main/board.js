@@ -24,8 +24,7 @@ function Board() {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [lastPage, setLastPage] = useState({})
-  console.log("page", page);
-  console.log("z", lastPage);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,7 +36,6 @@ function Board() {
             page: currentPage
           },
         });
-        console.log(response.data);
         setData(response.data.boardlist);
         const num = parseInt(response.data.size, 10);
         setPage(num);

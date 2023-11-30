@@ -4,7 +4,6 @@ import { useState } from "react";
 import CartList from "./cartList";
 import PurchaseList from "./PurchaseList";
 function Purchase({ data, ...props }) {
-  console.log("data 길이", data);
   const [price, setPrice] = useState(data.price);
   const cartItems = [];
   const pay_cancel=(merchant_uid,purchase_id,purchase)=>{
@@ -22,7 +21,6 @@ function Purchase({ data, ...props }) {
         stock : 1        
       }
     }).then(function (response){
-      console.log(response);
       window.location.reload();
     });
   }
@@ -38,7 +36,6 @@ function Purchase({ data, ...props }) {
       }})
     .then(function (response) {
       pay_cancel(merchant_uid,purchase_id);
-      console.log(response.data);
       }
     )};
 

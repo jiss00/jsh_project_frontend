@@ -3,7 +3,6 @@ import axios from "axios";
 import { useState } from "react";
 import CartList from "./cartList";
 function Cart({ data, ...props }) {
-  console.log("data 길이", data);
   const [price, setPrice] = useState(data.price);
   const [index, setIndex] = useState();
 
@@ -28,18 +27,15 @@ function Cart({ data, ...props }) {
         buyer_addr: '부산',                    // 구매자 주소
         buyer_postcode: '06018',
       }, function (res) {
-        console.log("res값:", res);
 
         // 결제검증
         axios({
           type: "POST",
           url: "https://jshtoy.shop/verify/" + res.imp_uid
         }).then(function (response) {
-          console.log("response값:", response);
 
           if (res.paid_amount === response.data.response.amount) {
             alert("결제 및 결제검증완료");
-            console.log("response값:", response);
             purchase(orderNumber);
           } else {
             alert("결제 실패");
@@ -68,7 +64,6 @@ function Cart({ data, ...props }) {
           }
         }
       ).then(function (response) {
-        console.log(response);
         alert("구매 했습니다.");
         window.location.reload();
       });
